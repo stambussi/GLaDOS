@@ -100,6 +100,12 @@ def main() -> None:
     # Download and verify model files
     os.system("uv run glados download")
 
+    # Install TTS dependencies (pocket-tts, torch, onnx) needed for export_onnx.py
+    os.system("uv pip install -e .[tts]")
+
+    # Build PocketTTS.cpp and download ONNX models to models/TTS/
+    subprocess.run(["scripts/build_pocket_tts.sh", "-f"])
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,3 @@
+[submodule "deps/PocketTTS.cpp"]
+	path = deps/PocketTTS.cpp
+	url = https://github.com/stambussi/PocketTTS.cpp.git

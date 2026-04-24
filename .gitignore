@@ -165,6 +165,7 @@ cython_debug/
 *.gguf
 *.onnx
 *.nemo
+*.model
 
 # Local knowledge store
 data/knowledge.json
