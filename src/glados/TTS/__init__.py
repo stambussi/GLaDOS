@@ -31,6 +31,7 @@ def get_speech_synthesizer(
     Parameters:
         voice (str): The type of TTS engine to use:
             - "glados": GLaDOS voice synthesizer
+            - "pocket-tts": PocketTTS.cpp voice synthesizer (uses default voice from data/voices/)
             - <str>: Kokoro voice synthesizer using the specified voice <str> is available
     Returns:
         SpeechSynthesizerProtocol: An instance of the requested speech synthesizer
@@ -41,6 +42,11 @@ def get_speech_synthesizer(
         from ..TTS import tts_glados
 
         return tts_glados.SpeechSynthesizer()
+
+    if voice.lower() == "pocket-tts":
+        from ..TTS import tts_pocket_tts
+
+        return tts_pocket_tts.SpeechSynthesizer()
 
     from ..TTS import tts_kokoro
 

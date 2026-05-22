@@ -169,6 +169,7 @@ cython_debug/
 
 # Local knowledge store
 data/knowledge.json
+data/voices
 
 # Local scratch space
 tmp/
